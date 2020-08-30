@@ -4,7 +4,7 @@
   border-radius: 50%;
   flex-shrink: 0;
   object-fit: cover;
-  background-image: url("http://placekitten.com/320/240");
+  background-image: url("https://placekitten.com/320/240");
   background-size: cover;
 }
 
@@ -19,7 +19,7 @@
 }
 
 .mat-expansion-panel-header-description {
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 figure {
