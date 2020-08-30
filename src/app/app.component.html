@@ -1,0 +1,38 @@
+<main>
+  <mat-paginator
+    [length]="numItems"
+    [pageSize]="pageSize"
+    [pageSizeOptions]="pageSizeOptions"
+    (page)="handlePageEvent($event)"
+  ></mat-paginator>
+
+  <section>
+    <mat-accordion multi>
+      <mat-expansion-panel
+        @onLeaveFadeAndShrink
+        *ngFor="
+          let item of items
+            | paginate
+              : {
+                  pageIndex: pageIndex,
+                  pageSize: pageSize
+                }
+        "
+        hideToggle
+      >
+        <mat-expansion-panel-header>
+          <mat-panel-title>Cat {{ item }}</mat-panel-title>
+          <mat-panel-description>
+            <span class="avatar"></span>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <ng-template matExpansionPanelContent>
+          <figure>
+            <img src="http://placekitten.com/320/240" alt="Cat {{ item }}" />
+          </figure>
+        </ng-template>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </section>
+</main>
